@@ -19,7 +19,10 @@ I saw this "1-Wire Keypad Interface With Arduino" from [2](https://www.electroni
 <p align = "center"><img src = "Images/circuit.png"></p>
 <p><b>Figure 3.</b> Schematic of the single output keypad circuit. The row connections are in series, and so are the columns, with the output measured at node C1.</p>
 
-Since I intended to use a single output, I had to test whether there would be different voltages corresponding to pressing each individual key. I performed a simulation in LTspice with the circuit as follows:
+Since I intended to use a single output, I had to test whether there would be different voltages corresponding to pressing each individual key. 
+
+## Simulation
+I performed a simulation in LTspice with the circuit as follows:
 <p align = "center"><img src = "Images/ltspice_circuit.png"></p>
 <p><b>Figure 4.</b> LTspice schematic of Fig.3 for circuit simulation.</p>
 
@@ -130,6 +133,8 @@ From the data of Fig. 6, the _Vout_ of the following switches are as follows:
   
   </tbody>
 </table>
+
+## Implementation
 
 
 
