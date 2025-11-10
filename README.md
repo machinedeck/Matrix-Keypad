@@ -19,6 +19,9 @@ I saw this "1-Wire Keypad Interface With Arduino" from [2](https://www.electroni
 <p align = "center"><img src = "Images/circuit.png"></p>
 <p><b>Figure 3.</b> Schematic of the single output keypad circuit. The row connections are in series, and so are the columns, with the output measured at node C1.</p>
 
+Since I intended to use a single output, I had to test whether there would be different voltages corresponding to pressing each individual key. I performed a simulation in LTspice with the circuit as follows:
+<p align = "center"><img src = "Images/ltspice_circuit.png"></p>
+
 
 # References
 [1] [https://www.circuitbasics.com/how-to-set-up-a-keypad-on-an-arduino/](https://www.circuitbasics.com/how-to-set-up-a-keypad-on-an-arduino/).
