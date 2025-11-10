@@ -1,0 +1,14 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\utente\OneDrive\Desktop\HOBBY\Matrix-Keyboard.net
+Start Time: Mon Nov 10 11:35:56 2025
+solver = Normal
+Maximum thread count: 4
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.684 seconds.
+
+Files loaded:
+C:\Users\utente\OneDrive\Desktop\HOBBY\Matrix-Keyboard.net
+
