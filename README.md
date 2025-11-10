@@ -30,7 +30,7 @@ As can be seen from Fig. 4, the switches are voltage controlled. In order to che
 Each switch turns **ON** when its corresponding switch voltage is more than the threshold. Before proceeding, it should be noted that I performed transient simulation, which shows the evolution of the output over time. In order to view the characteristic output of each pressed key, I had to turn an SVS within some specific time, then turn it **OFF** for the rest of the simulation to turn **ON** the others, allowing to study their corresponding voltage outputs. Hence, voltages sources in Fig. 4 are pulsed.
 
 For each SVS, it pulses at 5 V during a 0.5-s interval, indicating that is **ON**. At the start of the simulation, S11 from Fig. 1 turns ON for 0.5 s, and turns off until the end. After 0.5 s when S11 switches off, S12 turns on also for another 0.5 s. The other switches follows the same timing, starting from left to right, top to bottom. The result of the simulation is given as follows:
-<p align = "center"><img src = "Images/"></p>
+<p align = "center"><img src = "Images/sim.svg"></p>
 
 
 # References
