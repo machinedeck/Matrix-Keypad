@@ -1,5 +1,7 @@
 # Python Keypad Simulator in Arduino UNO Microcontroller through Serial Communication
 _Last Update: November 14, 2025_
+
+**Abstract**
 <p align = "center"><img src = "Images/ui_sample.png"></p>
 
 ## Background
