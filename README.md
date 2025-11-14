@@ -1,7 +1,7 @@
-# Python Keypad Simulator in Arduino UNO Microcontroller through Serial Communication
+# Python Keypad Simulator into Arduino UNO Microcontroller through Serial Communication
 _**Author:** černýstroj, **Last Update:** November 14, 2025_
 
-**Abstract:** 4x4 Keypad consists of matrix of key switches with each row/column connected to a horizontal/vertical line, providing eight output pins. For a single-output detection system, proper circuit design is essential to differentiate one key from another. This project performed a single-output keypad simulation in LTspice to characterize the analog output of each pressed key. The resulting data was used to develop a mock keypad user-interface (UI) in Python which randomizes a signal within the specified range of the key's characteristic analog output, considering possible signal fluctuations, and sends it to Arduino UNO microcontroller for detection and processing. The resulting signals were sent back to the UI to build and calculate mathematical expressions. The developed UI platform could potentially be re-used to replace the mock keypad UI with a real keypad for lower latency and without serial communication traffic.
+**Abstract:** 4x4 Keypad consists of matrix of key switches with each row/column connected to a horizontal/vertical line, providing eight output pins. For a single-output detection system, proper circuit design is essential to differentiate one key from another. This project performed a single-output keypad simulation in LTspice to characterize the analog output of each pressed key. The resulting data was used to develop a mock keypad user-interface (UI) in Python which randomizes a signal within the specified range of the key's characteristic analog output, considering possible signal fluctuations, and sends it to Arduino UNO microcontroller for detection and processing. The resulting signals were sent back to the UI to build and calculate mathematical expressions. The developed UI platform could potentially be re-used to replace the mock keypad with a real one for lower latency and without serial communication traffic.
 <p align = "center"><img src = "Images/ui_sample.png"></p>
 
 ## Background
@@ -43,7 +43,21 @@ From the data of Fig. 6, the _Vout_ of the following switches are as follows:
 <table align = "center">
   <thead>
   <tr>
-    <th class = "empty"></th>
+    <th colspan = "2">Row 1</th>
+    <th colspan = "2">Row 2</th>
+    <th colspan = "2">Row 3</th>
+    <th colspan = "2">Row 4</th>
+      
+  </tr>
+  
+  <tr>
+    <!--<th class = "empty"></th>-->
+    <th align = "center">Switch/Key</th>
+    <th align = "center"><i>Vout</i> [mV]</th>
+    <th align = "center">Switch/Key</th>
+    <th align = "center"><i>Vout</i> [mV]</th>
+    <th align = "center">Switch/Key</th>
+    <th align = "center"><i>Vout</i> [mV]</th>
     <th align = "center">Switch/Key</th>
     <th align = "center"><i>Vout</i> [mV]</th>
   </tr>
@@ -51,85 +65,46 @@ From the data of Fig. 6, the _Vout_ of the following switches are as follows:
 
   <tbody>
   <tr>
-    <th rowspan = "4">Row 1</th>
+    <!--<th rowspan = "4">Row 1</th>-->
     <td align = "center">S11</td>
     <td align = "center">4775.5</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S12</td>
-    <td align = "center">2442.6</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S13</td>
-    <td align = "center">1640.9</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S14</td>
-    <td align = "center">1235.5</td>
-  </tr>
-
-  <tr>
-    <th rowspan = "4">Row 2</th>
     <td align = "center">S21</td>
     <td align = "center">4571.1</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S22</td>
-    <td align = "center">2388.0</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S23</td>
-    <td align = "center">1616.1</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S24</td>
-    <td align = "center">1221.4</td>
-  </tr>
-
-  <tr>
-    <th rowspan = "4">Row 3</th>
     <td align = "center">S31</td>
     <td align = "center">4385.5</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S32</td>
-    <td align = "center">2335.8</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S33</td>
-    <td align = "center">1592.0</td>
-  </tr>
-
-  <tr>
-    <td align = "center">S34</td>
-    <td align = "center">1207.5</td>
-  </tr>
-
-  <tr>
-    <th rowspan = "4">Row 4</th>
     <td align = "center">S41</td>
     <td align = "center">4210.7</td>
   </tr>
 
   <tr>
+    <td align = "center">S12</td>
+    <td align = "center">2442.6</td>
+    <td align = "center">S22</td>
+    <td align = "center">2388.0</td>
+    <td align = "center">S32</td>
+    <td align = "center">2335.8</td>
     <td align = "center">S42</td>
     <td align = "center">2285.8</td>
   </tr>
 
   <tr>
+    <td align = "center">S13</td>
+    <td align = "center">1640.9</td>
+    <td align = "center">S23</td>
+    <td align = "center">1616.1</td>
+    <td align = "center">S33</td>
+    <td align = "center">1592.0</td>
     <td align = "center">S43</td>
     <td align = "center">1568.7</td>
   </tr>
 
   <tr>
+    <td align = "center">S14</td>
+    <td align = "center">1235.5</td>
+    <td align = "center">S24</td>
+    <td align = "center">1221.4</td>
+    <td align = "center">S34</td>
+    <td align = "center">1207.5</td>
     <td align = "center">S44</td>
     <td align = "center">1194.0</td>
   </tr>
