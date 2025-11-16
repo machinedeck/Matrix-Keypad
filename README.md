@@ -126,12 +126,12 @@ Based on these ranges, I started the serial communication protocol in Python. I 
 The script [`Keypad_Read.ino`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Keypad_Read/Keypad_Read.ino) must be uploaded to the Arduino UNO microcontroller to proceed with the next steps.
 
 
-### 3.2 UI
+### 3.1. UI
 To successfully imitate a keypad, a friendly UI was developed using `Tkinter`. To make this project much challenging and exciting, I decided to build an **M**ultiplication, **D**ivision, **A**ddition and **S**ubtraction (MDAS) calculator. This project then involves two parts: mock keypad integration and MDAS algorithm development. 
 
 The first part is straightforward and will only need to match the signal to its corresponding character. There are two windows developed as depicted in Fig. 0. The first window is the main MDAS calculator which has pressable keys, and two screens for the MDAS mathematical expression and the calculated answer. The other window shows the generated pseudosignal of the pressed key, and the status if it has been serially sent to the microcontroller. The pseudosignal is detected and processed, and sent back to the UI, displaying the corresponding character on the main window. The MDAS algorithm runs only when "=" is pressed, which is discussed in detail in the following section.
 
-### 3.1. MDAS calculation
+### 3.2. MDAS calculation
 The generation and transmission of the signal between the UI and microcontroller is straightforward. However, the processing of the string of characters had become a rigorous and crucial task for a successful MDAS calculator.
 
 For the calculation of the MDAS expressions, the code does not recognize the characters as numbers or operators. This makes it not so straightforward. Moreover, the process becomes complicated when there are multiple operations within the string, and a robust and reliable system should be implemented to assure that the correct answer is supplied by the algorithm.
@@ -146,10 +146,10 @@ To properly run the UI, the following codes are needed:
 - [`keypad_functions.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/keypad_functions.py) : Contains the MDAS algorithm and the conversion of the signal into characters
 - [`sim_data.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/sim_data.py) : This is unnecessary and can be omitted. This just contains the data of the simulation, which is used to specify the values of the pseudosignals.
 
-## Recommendations
+## 4. Recommendations
+As expected there was an observed delay from pressing the key to displaying the corresponding character due to the back-to-back serial communication. It is recommended to also try to measure this delay as it is not addressed in this project. However, this delay can be mitigated by integrating a real keypad. This may avoid serial communication traffic when sending a pseudosignal and transmitting a processed one from the microcontroller.
 
-
-## 4. Future Work
+## 5. Future Work
 I tried to implement the simulated circuit in a PCB to practice with KiCAD software. My continuing work can be found in this [link](https://github.com/machinedeck/Custom-Keypad-KiCAD).
 
 
