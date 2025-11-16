@@ -146,14 +146,17 @@ To properly run the UI, the following codes are needed:
 - [`keypad_functions.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/keypad_functions.py) : Contains the MDAS algorithm and the conversion of the signal into characters
 - [`sim_data.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/sim_data.py) : This is unnecessary and can be omitted. This just contains the data of the simulation, which is used to specify the values of the pseudosignals.
 
-## 4. Recommendations
+## 4. Conclusion
+I presented a mock keypad based on the data of LTspice circuit simulation. I proceeded to develop a UI interface for an MDAS calculator. I outlined the data processing flow from the input string to output when performing calculations.
+
+## 5. Recommendations
 As expected there was an observed delay from pressing the key to displaying the corresponding character due to the back-to-back serial communication. It is recommended to also try to measure this delay as it is not addressed in this project. However, this delay can be mitigated by integrating a real keypad. This may avoid serial communication traffic when sending a pseudosignal and transmitting a processed one from the microcontroller.
 
-## 5. Future Work
+## 6. Future Work
 I tried to implement the simulated circuit in a PCB to practice with KiCAD software. My continuing work can be found in this [link](https://github.com/machinedeck/Custom-Keypad-KiCAD).
 
 
-# References
+## 7. References
 [1] [https://www.circuitbasics.com/how-to-set-up-a-keypad-on-an-arduino/](https://www.circuitbasics.com/how-to-set-up-a-keypad-on-an-arduino/).
 
 [2] [https://circuitdigest.com/microcontroller-projects/interface-4x4-membrane-keypad-with-arduino](https://circuitdigest.com/microcontroller-projects/interface-4x4-membrane-keypad-with-arduino).
