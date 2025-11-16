@@ -123,7 +123,7 @@ where $n$ is the number of bits and ($V_{\text{max}}$, $V_{\text{min}}$) is the 
 
 Based on these ranges, I started the serial communication protocol in Python. I specified that when a key (e.g. S11) is pressed, a random number is generated within its corresponding range. This signal is then sent to the microcontroller. For the microcontroller part, I also specified the corresponding character of each key. For example, if the microcontroller receives a signal within the range of S11, it should output "1". For characters such as "+", etc. I did not really write them as is. I wrote then in terms of the number of keys, and when the information is sent back to Python, they will be decoded to matching characters.
 
-The script `Keypad_Read.ino` must be uploaded to the Arduino UNO microcontroller to proceed with the next steps.
+The script [`Keypad_Read.ino`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Keypad_Read/Keypad_Read.ino) must be uploaded to the Arduino UNO microcontroller to proceed with the next steps.
 
 
 ### 3.2 UI
@@ -142,9 +142,9 @@ For the calculation of the MDAS expressions, the code does not recognize the cha
 Fig. 7 shows the general implementation of the MDAS algorithm, consisting of conditional statements to consider the possible outcomes when e.g. the number is divided by zero or there is a syntax error. This algorithm is only triggered when "=" is pressed. However, the features of the UI exclude decimal and negative numbers, except if the output is one of those types. This means that double minus sign or a minus sign before a number automatically displays a syntax error. The operators are defined merely for operations.
 
 To properly run the UI, the following codes are needed:
-- `keypad.py` : **Main code** to launch the UI. Dependencies include the next scripts
-- `keypad_functions.py` : Contains the MDAS algorithm and the conversion of the signal into characters
-- `sim_data.py` : This is unnecessary and can be omitted. This just contains the data of the simulation, which is used to specify the values of the pseudosignals.
+- [`keypad.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/keypad.py) : **Main code** to launch the UI. Dependencies include the next scripts
+- [`keypad_functions.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/keypad_functions.py) : Contains the MDAS algorithm and the conversion of the signal into characters
+- [`sim_data.py`](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/Python%20codes/sim_data.py) : This is unnecessary and can be omitted. This just contains the data of the simulation, which is used to specify the values of the pseudosignals.
 
 ## Recommendations
 
