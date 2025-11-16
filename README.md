@@ -129,7 +129,7 @@ The generation and transmission of the signal between the UI and microcontroller
 
 
 ## 4. Future Work
-I tried to implement the simulated circuit in a PCB to practice with KiCAD software. My continuing work can be found in this [link](https://github.com/machinedeck/Matrix-Keypad-Project/blob/main/README.md).
+I tried to implement the simulated circuit in a PCB to practice with KiCAD software. My continuing work can be found in this [link](https://github.com/machinedeck/Custom-Keypad-KiCAD).
 
 
 # References
