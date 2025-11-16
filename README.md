@@ -123,9 +123,30 @@ where $n$ is the number of bits and ($V_{\text{max}}$, $V_{\text{min}}$) is the 
 
 Based on these ranges, I started the serial communication protocol in Python. I specified that when a key (e.g. S11) is pressed, a random number is generated within its corresponding range. This signal is then sent to the microcontroller. For the microcontroller part, I also specified the corresponding character of each key. For example, if the microcontroller receives a signal within the range of S11, it should output "1". For characters such as "+", etc. I did not really write them as is. I wrote then in terms of the number of keys, and when the information is sent back to Python, they will be decoded to matching characters.
 
+The script `Keypad_Read.ino` must be uploaded to the Arduino UNO microcontroller to proceed with the next steps.
+
+
+### 3.2 UI
+To successfully imitate a keypad, a friendly UI was developed using `Tkinter`. To make this project much challenging and exciting, I decided to build an **M**ultiplication, **D**ivision, **A**ddition and **S**ubtraction (MDAS) calculator. This project then involves two parts: mock keypad integration and MDAS algorithm development. 
+
+The first part is straightforward and will only need to match the signal to its corresponding character. There are two windows developed as depicted in Fig. 0. The first window is the main MDAS calculator which has pressable keys, and two screens for the MDAS mathematical expression and the calculated answer. The other window shows the generated pseudosignal of the pressed key, and the status if it has been serially sent to the microcontroller. The pseudosignal is detected and processed, and sent back to the UI, displaying the corresponding character on the main window. The MDAS algorithm runs only when "=" is pressed, which is discussed in detail in the following section.
+
 ### 3.1. MDAS calculation
 The generation and transmission of the signal between the UI and microcontroller is straightforward. However, the processing of the string of characters had become a rigorous and crucial task for a successful MDAS calculator.
+
+For the calculation of the MDAS expressions, the code does not recognize the characters as numbers or operators. This makes it not so straightforward. Moreover, the process becomes complicated when there are multiple operations within the string, and a robust and reliable system should be implemented to assure that the correct answer is supplied by the algorithm.
+
 <p align = "center"><img src = "Images/mdas_outline_with_sample_code.png"></p>
+<p align = "center"><b>Figure 7.</b> Outline of the MDAS algorithm developed in Python, showing the flow from the string input <b>A</b> into conditional outputs. The inset photo(s) on the upper left show(s) the snippets of the code.</p>
+
+Fig. 7 shows the general implementation of the MDAS algorithm, consisting of conditional statements to consider the possible outcomes when e.g. the number is divided by zero or there is a syntax error. This algorithm is only triggered when "=" is pressed. However, the features of the UI exclude decimal and negative numbers, except if the output is one of those types. This means that double minus sign or a minus sign before a number automatically displays a syntax error. The operators are defined merely for operations.
+
+To properly run the UI, the following codes are needed:
+- `keypad.py` : **Main code** to launch the UI. Dependencies include the next scripts
+- `keypad_functions.py` : Contains the MDAS algorithm and the conversion of the signal into characters
+- `sim_data.py` : This is unnecessary and can be omitted. This just contains the data of the simulation, which is used to specify the values of the pseudosignals.
+
+## Recommendations
 
 
 ## 4. Future Work
